@@ -14,6 +14,7 @@ Bonus:
 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa) */
 
+// my array
 const toDo = [
 
     {
@@ -43,15 +44,19 @@ const app = new Vue({
     el: "#app",
     data: {
         toDo,
+        // my input value
         newToDo: "",
     },
     methods: {
+        // funzione per aggiungere la classe line-trough in base al valore della booleana done
         lineTrought: function (index) {
             return this.toDo[index].done ? "text-decoration-line-through" : "";
         },
+        // funzione per rimuovere una task dalla lista
         removeToDo: function (doneIndex) {
             this.toDo.splice(doneIndex, 1);
         },
+        // funzione per aggiungere con l'input una nuova task
         addTask: function () {
             let newObj = {
                 text: this.newToDo,
@@ -60,8 +65,10 @@ const app = new Vue({
             if (newObj.text.length !== 0) {
                 this.toDo.push(newObj);
             }
+            // resetto l'input una volta aggiunta la task
             this.newToDo = "";
         },
+        // funzione per invertire il valore della booleanadone
         invertDone: function (index) {
             if (this.toDo[index].done) {
                 this.toDo[index].done = false;
