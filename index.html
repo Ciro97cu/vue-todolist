@@ -24,6 +24,19 @@
 
 <body>
 
+    <div id="app" class="container pt-5">
+        <div class="row bg-primary justify-content-center p-3">
+            <h1 class="col-auto">To Do List</h1>
+        </div>
+        <div class="row">
+            <ul class="no_bullet">
+                <li v-for="item in toDo" class="bg-info p-3">
+                    {{item.text}} <span class="ps-5">{{item.done}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!--***** link script *****-->
     <script src="javascript/script.js"></script>
