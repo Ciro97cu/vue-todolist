@@ -22,3 +22,6 @@ li {
     border-bottom: 1px dashed grey;
 }
 
+.pointer_on {
+    cursor: pointer;
+}

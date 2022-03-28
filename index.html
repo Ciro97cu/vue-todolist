@@ -30,8 +30,10 @@
         </div>
         <div class="row">
             <ul class="no_bullet">
-                <li v-for="item in toDo" class="bg-info p-3">
-                    {{item.text}} <span class="ps-5">{{item.done}}</span>
+                <li v-for="(item, index) in toDo" class="p-3" v-if="!arrayDoneTask.includes(index)">
+                    <i class="fa-solid fa-circle-xmark me-2 pointer_on" @click="removeToDo(index)"></i>
+                    <span :class="lineTrought(index)">{{item.text}}</span>
+                    <span class="ps-5">{{item.done}}</span>
                 </li>
             </ul>
         </div>
