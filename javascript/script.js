@@ -44,7 +44,6 @@ const app = new Vue({
     el: "#app",
     data: {
         toDo,
-        arrayDoneTask: [],
         newToDo: "",
     },
     methods: {
@@ -52,7 +51,7 @@ const app = new Vue({
             return this.toDo[index].done ? "text-decoration-line-through" : "";
         },
         removeToDo: function (doneIndex) {
-            this.arrayDoneTask.push(doneIndex);
+            this.toDo.splice(doneIndex, 1);
         },
         addTask: function () {
             let newObj = {
