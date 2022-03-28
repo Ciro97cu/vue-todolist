@@ -16,16 +16,11 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0;
 }
 
-li {
-    border-left: 1px solid grey;
-    border-right: 1px solid grey;
-    border-bottom: 1px dashed grey;
-}
-
 .pointer_on {
     cursor: pointer;
 }
 
-.column_gap {
+.gap {
     column-gap: 20px;
+    row-gap: 20px;
 }

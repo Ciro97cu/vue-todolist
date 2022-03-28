@@ -26,7 +26,7 @@ const toDo = [
     },
     {
         text: "Leggere un libro",
-        done: true,
+        done: false,
     },
     {
         text: "Andare in palestra",
@@ -59,10 +59,17 @@ const app = new Vue({
                 text: this.newToDo,
                 done: false,
             }
-            this.toDo.push(newObj);
+            if (newObj.text.length !== 0) {
+                this.toDo.push(newObj);
+            }
             this.newToDo = "";
+        },
+        invertDone: function (index) {
+            if (this.toDo[index].done) {
+                this.toDo[index].done = false;
+            } else {
+                this.toDo[index].done = true;
+            }
         }
-
     }
-
 });

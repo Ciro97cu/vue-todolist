@@ -32,15 +32,14 @@
             <ul class="no_bullet">
                 <li v-for="(item, index) in toDo" class="p-3" v-if="!arrayDoneTask.includes(index)">
                     <i class="fa-solid fa-circle-xmark me-2 pointer_on" @click="removeToDo(index)"></i>
-                    <span :class="lineTrought(index)">{{item.text}}</span>
-                    <span class="ps-5">{{item.done}}</span>
+                    <span class="testo_cc" @click="invertDone(index)" :class="lineTrought(index)">{{item.text}}</span>
                 </li>
             </ul>
         </div>
-        <div class="row justify-content-center column_gap">
+        <div class="row justify-content-center gap">
             <input v-model="newToDo" @keyup.enter="addTask" class="col-auto" type="text"
-                placeholder="Inserisci una cosa da fare">
-            <button @click="addTask" class="col-auto">Aggiungi</button>
+                placeholder="Inserisci un ToDo">
+            <button @click="addTask" class="col-auto bg-primary">Aggiungi</button>
         </div>
     </div>
 
