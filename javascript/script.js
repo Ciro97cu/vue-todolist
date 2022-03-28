@@ -45,6 +45,7 @@ const app = new Vue({
     data: {
         toDo,
         arrayDoneTask: [],
+        newToDo: "",
     },
     methods: {
         lineTrought: function (index) {
@@ -52,7 +53,16 @@ const app = new Vue({
         },
         removeToDo: function (doneIndex) {
             this.arrayDoneTask.push(doneIndex);
+        },
+        addTask: function () {
+            let newObj = {
+                text: this.newToDo,
+                done: false,
+            }
+            this.toDo.push(newObj);
+            this.newToDo = "";
         }
+
     }
 
 });

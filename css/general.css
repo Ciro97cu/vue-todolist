@@ -25,3 +25,7 @@ li {
 .pointer_on {
     cursor: pointer;
 }
+
+.column_gap {
+    column-gap: 20px;
+}
