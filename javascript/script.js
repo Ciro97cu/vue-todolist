@@ -58,12 +58,11 @@ const app = new Vue({
         },
         // funzione per aggiungere con l'input una nuova task
         addTask: function () {
-            let newObj = {
-                text: this.newToDo,
-                done: false,
-            }
-            if (newObj.text.length !== 0) {
-                this.toDo.push(newObj);
+            if (this.newToDo.length !== 0) {
+                this.toDo.push({
+                    text: this.newToDo,
+                    done: false,
+                });
             }
             // resetto l'input una volta aggiunta la task
             this.newToDo = "";
