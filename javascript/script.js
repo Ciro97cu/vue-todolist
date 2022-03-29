@@ -69,11 +69,7 @@ const app = new Vue({
         },
         // funzione per invertire il valore della booleanadone
         invertDone: function (index) {
-            if (this.toDo[index].done) {
-                this.toDo[index].done = false;
-            } else {
-                this.toDo[index].done = true;
-            }
+            this.toDo[index].done = !this.toDo[index].done
         }
     }
 });
